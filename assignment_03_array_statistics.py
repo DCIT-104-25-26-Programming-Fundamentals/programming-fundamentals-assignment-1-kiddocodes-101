@@ -38,4 +38,54 @@
 # =============================================================================
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
+def calculate_sum(numbers):
+    """Return the sum of the list of numbers."""
+    total = 0
+    for num in numbers:
+        total += num
+    return total
+
+
+def calculate_average(numbers):
+    """Return the average of the list of numbers."""
+    total = calculate_sum(numbers)
+    return total / len(numbers)
+
+
+def calculate_max(numbers):
+    """Return the maximum value in the list of numbers."""
+    maximum = numbers[0]
+    for num in numbers:
+        if num > maximum:
+            maximum = num
+    return maximum
+
+
+def calculate_min(numbers):
+    """Return the minimum value in the list of numbers."""
+    minimum = numbers[0]
+    for num in numbers:
+        if num < minimum:
+            minimum = num
+    return minimum
+
+
+if __name__ == "__main__":
+    try:
+        n = int(input("How many numbers? "))
+        if n <= 0:
+            print("Error: You must enter a positive number of values.")
+        else:
+            numbers = []
+            for i in range(1, n + 1):
+                num = float(input(f"Enter number {i}: "))
+                numbers.append(num)
+
+            print("\nResults:")
+            print(f"Sum:     {calculate_sum(numbers)}")
+            print(f"Average: {calculate_average(numbers)}")
+            print(f"Maximum: {calculate_max(numbers)}")
+            print(f"Minimum: {calculate_min(numbers)}")
+    except ValueError:
+        print("Error: Please enter valid numeric values.")
 
